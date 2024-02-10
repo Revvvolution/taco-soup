@@ -10,28 +10,71 @@ for (let i = 0; i < harryPotterTitles.length; i++) {
 
 /*************************************************************************************************************************/
 /*************************************************************************************************************************/
-
+var numAs = 0
+var numBs = 0
+var numCs = 0
+var numDs = 0
+var numFs = 0
+var totalGrades = 0
+var mostCommonLetterGrade = "B"
+var averagePercentage = 0
+var mostCommonGradeCount = 0
 
 var grades = [92, 91, 75, 66, 52, 90, 83, 85, 64, 90, 72, 88, 77, 98, 100, 73, 92]
 
+
 for (let s = 0; s < grades.length; s++) {
     if (grades[s] >= 0 && grades[s] <= 69){
-        console.log("You got an F")
+        console.log("You got an F");
+        numFs++
     }else if
     (grades[s] >= 70 && grades[s] <= 76){
-        console.log("You got a D")
+        console.log("You got a D");
+        numDs++
     }else if
     (grades[s] >= 77 && grades[s] <= 84){
-        console.log("You got a C")
+        console.log("You got a C");
+        numCs++
     }else if
     (grades[s] >= 85 && grades[s] <= 92){
-        console.log("You got a B")
+        console.log("You got a B");
+        numBs++
     }else if
     (grades[s] >= 93 && grades[s] <= 100){
-        console.log("You got a A")
+        console.log("You got an A");
+        numAs++
     }    
 }
 
+for(var s = 0; s < grades.length; s++) {
+    if(mostCommonGradeCount < numAs) {
+        mostCommonGradeCount = numAs
+        mostCommonGradeCount = "A"
+    }else if(mostCommonGradeCount < numBs) {
+        mostCommonGradeCount = numBs
+        mostCommonGradeCount = "B"
+    }else if(mostCommonGradeCount < numCs) {
+        mostCommonGradeCount = numCs
+        mostCommonGradeCount = "C"
+    }else if(mostCommonGradeCount < numDs) {
+        mostCommonGradeCount = numDs
+        mostCommonGradeCount = "D"
+    }else if(mostCommonGradeCount < numFs) {
+        mostCommonGradeCount = numFs
+        mostCommonGradeCount = "F"
+    }
+}
+
+for(var s = 0; s < grades.length; s++) {
+    totalGrades += grades[s];
+}
+
+var averagePercentage = totalGrades / grades.length;
+
+console.log(`Number of As: ${numAs}`)
+console.log(`Number of Bs: ${numBs}`)
+console.log(`Most common letter grade: ${mostCommonLetterGrade}`)
+console.log(`Average grade percentage: ${averagePercentage}`)
 
 
 /*************************************************************************************************************************/
